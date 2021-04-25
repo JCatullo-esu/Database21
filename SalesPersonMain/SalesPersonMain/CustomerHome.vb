@@ -653,4 +653,5 @@ Public Class CustomerHome
             connection.Close()
         End If
     End Sub
+
 End Class

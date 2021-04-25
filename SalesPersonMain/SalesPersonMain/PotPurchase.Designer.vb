@@ -25,13 +25,14 @@ Partial Class PotPurchase
         Me.RemovePurchaseButton = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RemovePurchaseButton
         '
         Me.RemovePurchaseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RemovePurchaseButton.Location = New System.Drawing.Point(349, 454)
+        Me.RemovePurchaseButton.Location = New System.Drawing.Point(624, 460)
         Me.RemovePurchaseButton.Name = "RemovePurchaseButton"
         Me.RemovePurchaseButton.Size = New System.Drawing.Size(165, 47)
         Me.RemovePurchaseButton.TabIndex = 282
@@ -56,11 +57,22 @@ Partial Class PotPurchase
         Me.DataGridView1.Size = New System.Drawing.Size(676, 342)
         Me.DataGridView1.TabIndex = 283
         '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(227, 460)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(165, 47)
+        Me.Button1.TabIndex = 284
+        Me.Button1.Text = "Refresh"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'PotPurchase
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(934, 532)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.RemovePurchaseButton)
         Me.Controls.Add(Me.Label26)
@@ -75,4 +87,5 @@ Partial Class PotPurchase
     Friend WithEvents RemovePurchaseButton As Button
     Friend WithEvents Label26 As Label
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Button1 As Button
 End Class

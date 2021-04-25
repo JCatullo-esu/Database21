@@ -8,6 +8,7 @@ Public Class PrevPurch
     Dim command As New MySqlCommand
     Dim table As New DataTable()
     Dim reader As MySqlDataReader
+    Dim username As Integer
     Public Property stringpass
 
     Private Sub DataGridView1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -24,7 +25,7 @@ Public Class PrevPurch
             command = New MySqlCommand(query2, connection)
 
 
-            Dim username As Integer
+
             username = command.ExecuteScalar
 
             Dim command2
@@ -61,36 +62,19 @@ Public Class PrevPurch
             connection.Open()
         End If
 
-        Try
-            Dim query As String = "SELECT `Make`,`Model`,`Year`,`Price` FROM `custsold`
+        Dim adapter As New MySqlDataAdapter("SELECT `Make`,`Model`,`Year`,`Price` FROM `custsold`
             LEFT JOIN `product` ON `product`.`CarID` = `custsold`.`CarID`
-            LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID` WHERE `CustID`=@CID"
-
-            Dim query2 As String = "SELECT `CustomerID` FROM `customer` WHERE `CustomerUsername` = '" & stringpass & "'"
-            command = New MySqlCommand(query2, connection)
+            LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID` WHERE `CustID`= '" & username & "'", connection)
 
 
-            Dim username As Integer
-            username = command.ExecuteScalar
+        Dim table As New DataTable()
+        adapter.Fill(table)
 
-            Dim command2
+        DataGridView1.DataSource = table
 
-            command2 = New MySqlCommand(query, connection)
-            command2.Parameters.AddWithValue("@CID", username)
-            Debug.Print(query)
-
-
-            table.Load(command2.ExecuteReader)
-
-            DataGridView1.DataSource = table
-
-            SumLabel.Text = (From row As DataGridViewRow In DataGridView1.Rows
-                             Where row.Cells(3).FormattedValue.ToString() <> String.Empty
-                             Select Convert.ToInt32(row.Cells(3).FormattedValue)).Sum().ToString()
-
-        Catch ex As Exception
-            System.Windows.Forms.MessageBox.Show(ex.Message)
-        End Try
+        SumLabel.Text = (From row As DataGridViewRow In DataGridView1.Rows
+                         Where row.Cells(3).FormattedValue.ToString() <> String.Empty
+                         Select Convert.ToInt32(row.Cells(3).FormattedValue)).Sum().ToString()
 
 
         If connection.State = ConnectionState.Open Then

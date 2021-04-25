@@ -196,8 +196,8 @@ Public Class NewSalesPersonHome
 
         Dim newID As Integer = command.ExecuteScalar()
 
-        Dim command2 As New MySqlCommand("INSERT INTO `lotcarinfo` (`CarLotID`) VALUES 
-         (@LotDropDown)", connection)
+        Dim command2 As New MySqlCommand("INSERT INTO `lotcarinfo` (`CarLotID`,`CarInLotID`) VALUES 
+         (@LotDropDown,@LotCarID)", connection)
 
         If LotNA.Checked = False Then
             Dim LotIDstring As Integer
@@ -207,8 +207,10 @@ Public Class NewSalesPersonHome
             LotIDstring = selectcommand3.ExecuteScalar()
 
             command2.Parameters.AddWithValue("@LotDropDown", LotIDstring)
+            command2.Parameters.AddWithValue("@LotCarID", newID)
         Else
             command2.Parameters.AddWithValue("@LotDropDown", DBNull.Value)
+            command2.Parameters.AddWithValue("@LotCarID", newID)
         End If
 
         If ExecCommand(command2) Then

@@ -23,7 +23,7 @@ Public Class NewEditCar
         Dim adapter As New MySqlDataAdapter("SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,
         `Lot Name` FROM `product` LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON
         `colorinfo`.`ColorinfoID` = `product`.`ColorID` LEFT JOIN  `lotcarinfo` on `lotcarinfo`.`CarInLotID` = `product`.`CarID` LEFT JOIN 
-         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID`", connection)
+         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `lotcarinfo`.`CarInLotID` = `product`.`CarID`", connection)
 
         Dim table As New DataTable()
         adapter.Fill(table)
@@ -256,7 +256,7 @@ Public Class NewEditCar
             Dim adapter As New MySqlDataAdapter("SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,
         `Lot Name` FROM `product` LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON
         `colorinfo`.`ColorinfoID` = `product`.`ColorID` LEFT JOIN  `lotcarinfo` on `lotcarinfo`.`CarInLotID` = `product`.`CarID` LEFT JOIN 
-         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID`", connection)
+         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `lotcarinfo`.`CarInLotID` = `product`.`CarID`", connection)
 
             Dim table As New DataTable()
             adapter.Fill(table)
@@ -397,6 +397,30 @@ Public Class NewEditCar
             MessageBox.Show(ex.Message)
         End Try
 
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+    End Sub
+
+    Private Sub MakeText_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MakeText.SelectedIndexChanged
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+        ModelText.Items.Clear()
+
+        Dim Query As String
+        Query = "SELECT * FROM `makemodelinfo` WHERE `Make`= '" & MakeText.Text & "'"
+        command = New MySqlCommand(Query, connection)
+
+        reader = command.ExecuteReader
+
+        While reader.Read
+            Dim ModID = reader.GetString("Model")
+            ModelText.Items.Add(ModID)
+
+        End While
 
         If connection.State = ConnectionState.Open Then
             connection.Close()

@@ -11,6 +11,20 @@ Public Class PotPurchase
     Dim reader As MySqlDataReader
     Dim Caridint, Yearint, Milageint, Priceint, VinNumint As Integer
     Dim MakeString, ModelString, BodyStyleString, ColorString, CarPictureString, LotNameString As String
+    Dim username As Integer
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim adapter As New MySqlDataAdapter("SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,
+            `Lot Name` FROM `salespotpurchase` LEFT JOIN `product` ON `product`.`CarID` = `salespotpurchase`.`SalesCarID`
+            LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON 
+            `colorinfo`.`ColorinfoID` = `product`.`ColorID` LEFT JOIN `lotcarinfo` ON `lotcarinfo`.`CarInLotID` = `product`.`CarID`
+            LEFT JOIN `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `SalesCustID`='" & username & "'", connection)
+
+        Dim table As New DataTable()
+        adapter.Fill(table)
+
+        DataGridView1.DataSource = table
+    End Sub
 
     Private Sub PurchaseButton_Click(sender As Object, e As EventArgs)
 
@@ -33,14 +47,13 @@ Public Class PotPurchase
             command = New MySqlCommand(query2, connection)
 
 
-            Dim username As Integer
+
             username = command.ExecuteScalar
 
             Dim command2
 
             command2 = New MySqlCommand(query, connection)
             command2.Parameters.AddWithValue("@CID", username)
-            Debug.Print(query)
 
 
             table.Load(command2.ExecuteReader)
