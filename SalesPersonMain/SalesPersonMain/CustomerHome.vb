@@ -105,7 +105,7 @@ Public Class CustomerHome
             Dim adapter As New MySqlDataAdapter("SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,
             `Lot Name` FROM `product` LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON
              `colorinfo`.`ColorinfoID` = `product`.`ColorID` LEFT JOIN  `lotcarinfo` on `lotcarinfo`.`CarInLotID` = `product`.`CarID` LEFT JOIN 
-             `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID`", connection)
+             `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `lotcarinfo`.`CarLotID` = `lot info`.`Lot ID`", connection)
 
             Dim table As New DataTable()
             adapter.Fill(table)
@@ -150,6 +150,7 @@ Public Class CustomerHome
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim prevpur = New PrevPurch()
+        prevpur.stringpass = Me.stringpass
         prevpur.Show()
     End Sub
 
@@ -306,7 +307,7 @@ Public Class CustomerHome
             Dim adapter As New MySqlDataAdapter("SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,
          `Lot Name` FROM `product` LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON
          `colorinfo`.`ColorinfoID` = `product`.`ColorID` LEFT JOIN  `lotcarinfo` on `lotcarinfo`.`CarInLotID` = `product`.`CarID` LEFT JOIN 
-         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID`", connection)
+         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `lotcarinfo`.`CarLotID` = `lot info`.`Lot ID`", connection)
 
 
             Dim table As New DataTable()
@@ -339,7 +340,7 @@ Public Class CustomerHome
         Dim Search As String = "SELECT `CarID`,`Make`,`Model`,`Year`,`Body Style`,`Milage`,`Color`,`Price`,`VinNum`,`Car Picture`,`Lot Name` FROM `product` LEFT JOIN
         `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID` 
         LEFT JOIN  `lotcarinfo` on `lotcarinfo`.`CarInLotID` = `product`.`CarID` LEFT JOIN 
-         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE "
+         `lot info` ON `lot info`.`Lot ID` = `lotcarinfo`.`CarLotID` WHERE `lotcarinfo`.`CarLotID` = `lot info`.`Lot ID` AND "
 
         Using connection
             Using command As New MySqlCommand()

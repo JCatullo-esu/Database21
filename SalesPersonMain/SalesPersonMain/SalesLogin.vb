@@ -53,6 +53,7 @@ Public Class SalesLogin
             If count = 1 Then
                 MessageBox.Show("Connected to Salesperson page")
                 Dim menu = New NewSalesPersonHome()
+                menu.sstringpass = SUserName.Text
                 menu.Show()
                 Me.Close()
             ElseIf count > 1 Then
@@ -82,6 +83,10 @@ Public Class SalesLogin
     End Sub
 
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub SUserName_TextChanged(sender As Object, e As EventArgs) Handles SUserName.TextChanged
 
     End Sub
 End Class

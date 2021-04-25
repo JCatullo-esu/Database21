@@ -13,6 +13,9 @@ Public Class NewSalesPersonHome
     Dim reader As MySqlDataReader
     Dim reader2 As MySqlDataReader
     Dim reader3 As MySqlDataReader
+    Public Property sstringpass
+
+    Dim CarIDint, CustID, Priceint As Integer
     Dim insertString As String
     Dim connectionString = "server=localhost;user id=root;password=1234;persistsecurityinfo=True;database=SalesDB"
     Dim table As New DataTable()
@@ -35,6 +38,7 @@ Public Class NewSalesPersonHome
         Catch ex As Exception
 
             MessageBox.Show("ERROR")
+            MessageBox.Show(ex.Message)
             Return False
 
         End Try
@@ -324,16 +328,21 @@ Public Class NewSalesPersonHome
             connection.Open()
         End If
 
-        Dim adapter As New MySqlDataAdapter("SELECT `SalesID`, `SalesFirstName`, `SalesLastName`, `CustomerID`,`CustomerFirstName`,`CustomerLastName`,`CarID`,`MMID`,`Make`,`Model`,`Color`,`Milage`,`Price`
-        FROM `salesperson` LEFT JOIN `custtocarid` on `custtocarid`.`SalesTransactionID` =  salesperson.`CurrentTransactionID` LEFT JOIN 
-        `custprevpurchase` on `custprevpurchase`.`PrevSaleTransactionID` = `custtocarid`.`SalesTransactionID` LEFT JOIN `product` on 
-        `product`.`CarID` = `custtocarid`.`SaleCarID` LEFT JOIN `customer` on `customer`.`CustomerID` = `custtocarid`.`SaleCustomerID` LEFT JOIN
-        `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID`", connection)
+        'pot sales
+        Dim adapter As New MySqlDataAdapter("SELECT `CustomerID`,`CustomerFirstName`,`CustomerLastName`,`CarID`,`Make`,`Model`,`Year`,`Color`,`Price`
+        FROM `customer` LEFT JOIN `salespotpurchase` ON `salespotpurchase`.`SalesCustID` = `customer`.`CustomerID`
+         LEFT JOIN `product` ON `product`.`CarID` = `salespotpurchase`.`SalesCarID`    
+        LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` 
+        LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID` WHERE `customer`.`CustomerID` = `salespotpurchase`.`SalesCustID`", connection)
+
+
+
 
         Dim table As New DataTable()
         adapter.Fill(table)
 
-        SalesPersonGrid.DataSource = table
+        CustomerCurrentGrid.DataSource = table
+        CustomerCurrentGrid.Columns(0).Visible = False
 
 
         If connection.State = ConnectionState.Open Then
@@ -347,10 +356,12 @@ Public Class NewSalesPersonHome
             connection.Open()
         End If
 
-        Dim adapter As New MySqlDataAdapter("SELECT `CustomerID`,`CustomerFirstName`,`CustomerLastName`,`CarID`,`Make`,`Model`,`Color`,`Milage`,`Price` FROM 
-        `custprevpurchase` LEFT JOIN `customer` on `customer`.`CustomerID` = `custprevpurchase`.`PrevSaleCustomerID` LEFT JOIN `product` ON
-        `product`.`CarID` = `custprevpurchase`.`PrevSaleCarID` LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID` LEFT JOIN `colorinfo` ON
-         `colorinfo`.`ColorinfoID` = `product`.`ColorID` ", connection)
+        Dim adapter As New MySqlDataAdapter("SELECT `SalesFirstName`,`SalesLastName`,`CustomerFirstName`,`CustomerLastName`,`Make`,`Model`,
+        `Year`,`Milage`,`Color`,`Price` FROM `salesperson` LEFT JOIN `custsold` ON `custsold`.`SalesPersonID` = `salesperson`.`SalesID`
+         LEFT JOIN `customer` ON `customer`.`CustomerID` = `custsold`.`CustID`
+         LEFT JOIN `product` ON `product`.`CarID` = `custsold`.`CarID` 
+         LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID`
+         LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID`", connection)
 
         Dim table As New DataTable()
         adapter.Fill(table)
@@ -363,8 +374,64 @@ Public Class NewSalesPersonHome
         End If
     End Sub
 
+
+
     Private Sub ColorDrop_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ColorDrop.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub PurchaseButton_Click(sender As Object, e As EventArgs) Handles PurchaseButton.Click
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+
+        Dim command As New MySqlCommand("INSERT INTO `custsold` (`CustID`,`CarID`,`SoldPrice`,`SalesPersonID`) VALUES 
+         (@CustID,@CarID,@SoldPrice,@SalesPersonID)", connection)
+
+        Dim useridcommand As New MySqlCommand("SELECT `SalesID` FROM `salesperson` WHERE `SalesUserName`=@UserName", connection)
+        useridcommand.Parameters.AddWithValue("@Username", sstringpass)
+
+        Dim salesIDint As Integer
+        salesIDint = useridcommand.ExecuteScalar
+
+
+        command.Parameters.AddWithValue("@CustID", CustID)
+        command.Parameters.AddWithValue("@CarID", CarIDint)
+        command.Parameters.AddWithValue("@SoldPrice", Priceint)
+        command.Parameters.AddWithValue("@SalesPersonID", salesIDint)
+
+        Dim command3 As New MySqlCommand("", connection)
+
+        If ExecCommand(command) Then
+            MessageBox.Show("Data Inserted")
+            Try
+                Dim query As String = "Delete FROM `salespotpurchase` WHERE `SalesCarID`=@SalesCarID AND `SalesCustID`=@SalesCustID"
+                Dim deletepot As New MySqlCommand(query, connection)
+                deletepot.Parameters.AddWithValue("@SalesCarID", CarIDint)
+                deletepot.Parameters.AddWithValue("@SalesCustID", CustID)
+
+                reader = deletepot.ExecuteReader
+                reader.Close()
+
+                Dim query2 As String = "Delete FROM `lotcarinfo` WHERE `CarInLotID` = @CarInLotID"
+                Dim deletecar As New MySqlCommand(query2, connection)
+                deletecar.Parameters.AddWithValue("@CarInLotID", CarIDint)
+                reader = deletecar.ExecuteReader
+                reader.Close()
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            End Try
+
+        Else
+            MessageBox.Show("Data NOT Inserted")
+        End If
+
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
     End Sub
 
     Private Sub Refresh_Click(sender As Object, e As EventArgs) Handles Refresh.Click
@@ -424,6 +491,54 @@ Public Class NewSalesPersonHome
         End If
     End Sub
 
+    Private Sub RefreshPrev_Click(sender As Object, e As EventArgs) Handles RefreshPrev.Click
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+        'pot sales
+        Dim adapter As New MySqlDataAdapter("SELECT `CustomerID`,`CustomerFirstName`,`CustomerLastName`,`CarID`,`Make`,`Model`,`Year`,`Color`,`Price`
+        FROM `customer` LEFT JOIN `salespotpurchase` ON `salespotpurchase`.`SalesCustID` = `customer`.`CustomerID`
+         LEFT JOIN `product` ON `product`.`CarID` = `salespotpurchase`.`SalesCarID`    
+        LEFT JOIN `makemodelinfo` on `makemodelinfo`.`MMinfoID` = `product`.`MMID` 
+        LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID` WHERE `customer`.`CustomerID` = `salespotpurchase`.`SalesCustID`", connection)
+
+
+        Dim table As New DataTable()
+        adapter.Fill(table)
+
+        CustomerCurrentGrid.DataSource = table
+        CustomerCurrentGrid.Columns(0).Visible = False
+
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+    End Sub
+
+    Private Sub RefreshSalesPrevPurc_Click(sender As Object, e As EventArgs) Handles RefreshSalesPrevPurc.Click
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+        Dim adapter As New MySqlDataAdapter("SELECT `SalesFirstName`,`SalesLastName`,`CustomerFirstName`,`CustomerLastName`,`Make`,`Model`,
+        `Year`,`Milage`,`Color`,`Price` FROM `salesperson` LEFT JOIN `custsold` ON `custsold`.`SalesPersonID` = `salesperson`.`SalesID`
+         LEFT JOIN `customer` ON `customer`.`CustomerID` = `custsold`.`CustID`
+         LEFT JOIN `product` ON `product`.`CarID` = `custsold`.`CarID` 
+         LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID`
+         LEFT JOIN `colorinfo` ON `colorinfo`.`ColorinfoID` = `product`.`ColorID`", connection)
+
+        Dim table As New DataTable()
+        adapter.Fill(table)
+
+        PrevGrid.DataSource = table
+
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+    End Sub
+
     Private Sub MakeDropDown_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MakeDropDown.SelectedIndexChanged
         If connection.State = ConnectionState.Closed Then
             connection.Open()
@@ -447,4 +562,20 @@ Public Class NewSalesPersonHome
             connection.Close()
         End If
     End Sub
+
+    Private Sub CustomerCurrentGrid_MouseClick(sender As Object, e As MouseEventArgs) Handles CustomerCurrentGrid.MouseClick
+
+        Try
+            Dim i As Integer
+            i = CustomerCurrentGrid.CurrentRow.Index
+            CustID = CustomerCurrentGrid.Item(0, i).Value
+            CarIDint = CustomerCurrentGrid.Item(3, i).Value
+            Priceint = CustomerCurrentGrid.Item(8, i).Value
+
+        Catch ex As Exception
+            MessageBox.Show("Error, nothing in fields")
+        End Try
+
+    End Sub
+
 End Class

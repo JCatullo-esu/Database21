@@ -21,8 +21,7 @@ Public Class Form1
     End Sub
 
     Private Sub PreviousSaleButton_Click(sender As Object, e As EventArgs) Handles PreviousSaleButton.Click
-        Dim sales = New PreviousSales()
-        sales.Show()
+
     End Sub
 
     Private Sub SalesDeclinedButton_Click(sender As Object, e As EventArgs) Handles SalesDeclinedButton.Click

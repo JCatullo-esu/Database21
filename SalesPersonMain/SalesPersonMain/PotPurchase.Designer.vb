@@ -23,7 +23,6 @@ Partial Class PotPurchase
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.RemovePurchaseButton = New System.Windows.Forms.Button()
-        Me.PurchaseButton = New System.Windows.Forms.Button()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -32,22 +31,12 @@ Partial Class PotPurchase
         'RemovePurchaseButton
         '
         Me.RemovePurchaseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RemovePurchaseButton.Location = New System.Drawing.Point(504, 455)
+        Me.RemovePurchaseButton.Location = New System.Drawing.Point(349, 454)
         Me.RemovePurchaseButton.Name = "RemovePurchaseButton"
         Me.RemovePurchaseButton.Size = New System.Drawing.Size(165, 47)
         Me.RemovePurchaseButton.TabIndex = 282
         Me.RemovePurchaseButton.Text = "Remove car from potential purchase"
         Me.RemovePurchaseButton.UseVisualStyleBackColor = True
-        '
-        'PurchaseButton
-        '
-        Me.PurchaseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PurchaseButton.Location = New System.Drawing.Point(215, 455)
-        Me.PurchaseButton.Name = "PurchaseButton"
-        Me.PurchaseButton.Size = New System.Drawing.Size(171, 47)
-        Me.PurchaseButton.TabIndex = 281
-        Me.PurchaseButton.Text = "Purchase Car"
-        Me.PurchaseButton.UseVisualStyleBackColor = True
         '
         'Label26
         '
@@ -74,7 +63,6 @@ Partial Class PotPurchase
         Me.ClientSize = New System.Drawing.Size(934, 532)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.RemovePurchaseButton)
-        Me.Controls.Add(Me.PurchaseButton)
         Me.Controls.Add(Me.Label26)
         Me.Name = "PotPurchase"
         Me.Text = "PotPurchase"
@@ -85,7 +73,6 @@ Partial Class PotPurchase
     End Sub
 
     Friend WithEvents RemovePurchaseButton As Button
-    Friend WithEvents PurchaseButton As Button
     Friend WithEvents Label26 As Label
     Friend WithEvents DataGridView1 As DataGridView
 End Class

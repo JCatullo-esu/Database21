@@ -167,12 +167,6 @@
     <Compile Include="PotPurchase.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PreviousSales.Designer.vb">
-      <DependentUpon>PreviousSales.vb</DependentUpon>
-    </Compile>
-    <Compile Include="PreviousSales.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="PrevPurch.Designer.vb">
       <DependentUpon>PrevPurch.vb</DependentUpon>
     </Compile>
@@ -256,9 +250,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PotPurchase.resx">
       <DependentUpon>PotPurchase.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PreviousSales.resx">
-      <DependentUpon>PreviousSales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrevPurch.resx">
       <DependentUpon>PrevPurch.vb</DependentUpon>

@@ -59,7 +59,7 @@ Partial Class NewSalesPersonHome
         Me.VinNA = New System.Windows.Forms.CheckBox()
         Me.CarPicNA = New System.Windows.Forms.CheckBox()
         Me.LotNA = New System.Windows.Forms.CheckBox()
-        Me.SalesPersonGrid = New System.Windows.Forms.DataGridView()
+        Me.CustomerCurrentGrid = New System.Windows.Forms.DataGridView()
         Me.SalespotpurchaseBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SalespotpurchaseTableAdapter = New SalesPersonMain.SalesDBDSTableAdapters.salespotpurchaseTableAdapter()
         Me.PrevGrid = New System.Windows.Forms.DataGridView()
@@ -78,12 +78,15 @@ Partial Class NewSalesPersonHome
         Me.Label16 = New System.Windows.Forms.Label()
         Me.MakeDropDown = New System.Windows.Forms.ComboBox()
         Me.ModelDropDown = New System.Windows.Forms.ComboBox()
+        Me.PurchaseButton = New System.Windows.Forms.Button()
+        Me.RefreshPrev = New System.Windows.Forms.Button()
+        Me.RefreshSalesPrevPurc = New System.Windows.Forms.Button()
         CType(Me.ColorinfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NEWSALESDBDATASET, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesdbDataSetFIXED, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.LotInfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesDBDS, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SalesPersonGrid, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerCurrentGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalespotpurchaseBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PrevGrid, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MakemodelinfoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -389,13 +392,13 @@ Partial Class NewSalesPersonHome
         Me.LotNA.Text = "N/A"
         Me.LotNA.UseVisualStyleBackColor = True
         '
-        'SalesPersonGrid
+        'CustomerCurrentGrid
         '
-        Me.SalesPersonGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SalesPersonGrid.Location = New System.Drawing.Point(710, 368)
-        Me.SalesPersonGrid.Name = "SalesPersonGrid"
-        Me.SalesPersonGrid.Size = New System.Drawing.Size(485, 212)
-        Me.SalesPersonGrid.TabIndex = 261
+        Me.CustomerCurrentGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.CustomerCurrentGrid.Location = New System.Drawing.Point(710, 368)
+        Me.CustomerCurrentGrid.Name = "CustomerCurrentGrid"
+        Me.CustomerCurrentGrid.Size = New System.Drawing.Size(485, 212)
+        Me.CustomerCurrentGrid.TabIndex = 261
         '
         'SalespotpurchaseBindingSource
         '
@@ -418,21 +421,21 @@ Partial Class NewSalesPersonHome
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(812, 334)
+        Me.Label12.Location = New System.Drawing.Point(146, 329)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(259, 20)
+        Me.Label12.Size = New System.Drawing.Size(268, 20)
         Me.Label12.TabIndex = 263
-        Me.Label12.Text = "Salesperson and their current sales"
+        Me.Label12.Text = "Salesperson and their previous sales"
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(175, 334)
+        Me.Label13.Location = New System.Drawing.Point(857, 329)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(193, 20)
+        Me.Label13.Size = New System.Drawing.Size(184, 20)
         Me.Label13.TabIndex = 264
-        Me.Label13.Text = "Customer's previous sales"
+        Me.Label13.Text = "Customer's current sales"
         '
         'Label14
         '
@@ -512,11 +515,42 @@ Partial Class NewSalesPersonHome
         Me.ModelDropDown.Size = New System.Drawing.Size(89, 21)
         Me.ModelDropDown.TabIndex = 273
         '
+        'PurchaseButton
+        '
+        Me.PurchaseButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PurchaseButton.Location = New System.Drawing.Point(1001, 601)
+        Me.PurchaseButton.Name = "PurchaseButton"
+        Me.PurchaseButton.Size = New System.Drawing.Size(171, 47)
+        Me.PurchaseButton.TabIndex = 282
+        Me.PurchaseButton.Text = "Sell car to customer"
+        Me.PurchaseButton.UseVisualStyleBackColor = True
+        '
+        'RefreshPrev
+        '
+        Me.RefreshPrev.Location = New System.Drawing.Point(766, 601)
+        Me.RefreshPrev.Name = "RefreshPrev"
+        Me.RefreshPrev.Size = New System.Drawing.Size(151, 46)
+        Me.RefreshPrev.TabIndex = 283
+        Me.RefreshPrev.Text = "Refresh "
+        Me.RefreshPrev.UseVisualStyleBackColor = True
+        '
+        'RefreshSalesPrevPurc
+        '
+        Me.RefreshSalesPrevPurc.Location = New System.Drawing.Point(202, 601)
+        Me.RefreshSalesPrevPurc.Name = "RefreshSalesPrevPurc"
+        Me.RefreshSalesPrevPurc.Size = New System.Drawing.Size(151, 47)
+        Me.RefreshSalesPrevPurc.TabIndex = 284
+        Me.RefreshSalesPrevPurc.Text = "Refresh "
+        Me.RefreshSalesPrevPurc.UseVisualStyleBackColor = True
+        '
         'NewSalesPersonHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1373, 704)
+        Me.Controls.Add(Me.RefreshSalesPrevPurc)
+        Me.Controls.Add(Me.RefreshPrev)
+        Me.Controls.Add(Me.PurchaseButton)
         Me.Controls.Add(Me.ModelDropDown)
         Me.Controls.Add(Me.MakeDropDown)
         Me.Controls.Add(Me.Label16)
@@ -525,7 +559,7 @@ Partial Class NewSalesPersonHome
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.PrevGrid)
-        Me.Controls.Add(Me.SalesPersonGrid)
+        Me.Controls.Add(Me.CustomerCurrentGrid)
         Me.Controls.Add(Me.LotNA)
         Me.Controls.Add(Me.CarPicNA)
         Me.Controls.Add(Me.VinNA)
@@ -563,7 +597,7 @@ Partial Class NewSalesPersonHome
         CType(Me.SalesdbDataSetFIXED, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.LotInfoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SalesDBDS, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SalesPersonGrid, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerCurrentGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SalespotpurchaseBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PrevGrid, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MakemodelinfoBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -606,7 +640,7 @@ Partial Class NewSalesPersonHome
     Friend WithEvents VinNA As CheckBox
     Friend WithEvents CarPicNA As CheckBox
     Friend WithEvents LotNA As CheckBox
-    Friend WithEvents SalesPersonGrid As DataGridView
+    Friend WithEvents CustomerCurrentGrid As DataGridView
     Friend WithEvents SalespotpurchaseBindingSource As BindingSource
     Friend WithEvents SalespotpurchaseTableAdapter As SalesDBDSTableAdapters.salespotpurchaseTableAdapter
     Friend WithEvents PrevGrid As DataGridView
@@ -628,4 +662,7 @@ Partial Class NewSalesPersonHome
     Friend WithEvents Label16 As Label
     Friend WithEvents MakeDropDown As ComboBox
     Friend WithEvents ModelDropDown As ComboBox
+    Friend WithEvents PurchaseButton As Button
+    Friend WithEvents RefreshPrev As Button
+    Friend WithEvents RefreshSalesPrevPurc As Button
 End Class

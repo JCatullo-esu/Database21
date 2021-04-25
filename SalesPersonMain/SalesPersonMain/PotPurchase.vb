@@ -12,6 +12,10 @@ Public Class PotPurchase
     Dim Caridint, Yearint, Milageint, Priceint, VinNumint As Integer
     Dim MakeString, ModelString, BodyStyleString, ColorString, CarPictureString, LotNameString As String
 
+    Private Sub PurchaseButton_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
     Public Property stringpass
 
     Private Sub PotPurchase_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -68,9 +72,6 @@ Public Class PotPurchase
 
             Dim username As Integer
             username = command2.ExecuteScalar
-
-            Debug.Print(Caridint)
-            Debug.Print(username)
 
             Dim query As String = "DELETE FROM `salespotpurchase` WHERE `SalesCarID`= @CarID AND `SalesCustID`= @CustID"
             Dim delete As New MySqlCommand(query, connection)

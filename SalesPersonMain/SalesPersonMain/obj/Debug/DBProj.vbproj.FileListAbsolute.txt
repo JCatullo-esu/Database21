@@ -1,7 +1,6 @@
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\DBProj.vbprojAssemblyReference.cache
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.LotCityLook.resources
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.MainMenu.resources
-C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.PreviousSales.resources
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Form1.resources
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Resources.resources
 C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\DBProj.vbproj.GenerateResource.cache
