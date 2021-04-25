@@ -1,0 +1,26 @@
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.exe.config
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.exe
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.pdb
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.xml
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbprojAssemblyReference.cache
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Form1.resources
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Resources.resources
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbproj.GenerateResource.cache
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbproj.CoreCompileInputs.cache
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.exe
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.xml
+C:\Users\zespy\Documents\New Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.pdb
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.exe.config
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.exe
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.pdb
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\bin\Debug\SalesPersonMain.xml
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbprojAssemblyReference.cache
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Form1.resources
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.Resources.resources
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbproj.GenerateResource.cache
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.vbproj.CoreCompileInputs.cache
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.exe
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.xml
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.pdb
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.LotCityLook.resources
+C:\Users\zespy\Documents\Database Project\SalesPersonMain\SalesPersonMain\obj\Debug\SalesPersonMain.PreviousSales.resources

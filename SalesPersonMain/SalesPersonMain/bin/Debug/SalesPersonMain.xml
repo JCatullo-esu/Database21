@@ -1,0 +1,794 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SalesPersonMain
+</name>
+</assembly>
+<members>
+<member name="T:SalesPersonMain.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SalesPersonMain.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SalesPersonMain.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDS.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDS.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDS.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDSTableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.UpdateUpdatedRows(SalesPersonMain.EditCarViewerDS,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.UpdateInsertedRows(SalesPersonMain.EditCarViewerDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.UpdateDeletedRows(SalesPersonMain.EditCarViewerDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.UpdateAll(SalesPersonMain.EditCarViewerDS)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SalesPersonMain.EditCarViewerDSTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.colorinfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.customerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custprevpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custtocaridDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.lot_infoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.makemodelinfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespersonDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespotpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.colorinfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.customerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custprevpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custtocaridRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.lot_infoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.makemodelinfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespersonRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespotpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.colorinfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.customerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custprevpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.custtocaridRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.lot_infoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.makemodelinfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespersonRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASET.salespotpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.colorinfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.customerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.custprevpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.custtocaridTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.lot_infoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.makemodelinfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.salespersonTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.salespotpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.UpdateUpdatedRows(SalesPersonMain.NEWSALESDBDATASET,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.UpdateInsertedRows(SalesPersonMain.NEWSALESDBDATASET,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.UpdateDeletedRows(SalesPersonMain.NEWSALESDBDATASET,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.UpdateAll(SalesPersonMain.NEWSALESDBDATASET)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SalesPersonMain.NEWSALESDBDATASETTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1TableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(SalesPersonMain.salesdbDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(SalesPersonMain.salesdbDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(SalesPersonMain.salesdbDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.UpdateAll(SalesPersonMain.salesdbDataSet1)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.colorinfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.customerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custprevpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custtocaridDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.lot_infoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.makemodelinfoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespersonDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespotpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.colorinfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.customerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custprevpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custtocaridRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.lot_infoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.makemodelinfoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespersonRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespotpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.colorinfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.customerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custprevpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.custtocaridRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.lot_infoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.makemodelinfoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespersonRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXED.salespotpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.colorinfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.customerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.custprevpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.custtocaridTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.lot_infoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.makemodelinfoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.salespersonTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.salespotpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.UpdateUpdatedRows(SalesPersonMain.salesdbDataSetFIXED,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.UpdateInsertedRows(SalesPersonMain.salesdbDataSetFIXED,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.UpdateDeletedRows(SalesPersonMain.salesdbDataSetFIXED,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.UpdateAll(SalesPersonMain.salesdbDataSetFIXED)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SalesPersonMain.salesdbDataSetFIXEDTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS">
+<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.customerDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custprevpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custtocaridDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.lot_infoDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.productDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespersonDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespotpurchaseDataTable">
+<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.customerRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custprevpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custtocaridRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.lot_infoRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.productRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespersonRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespotpurchaseRow">
+<summary>
+Represents strongly named DataRow class.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.customerRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custprevpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.custtocaridRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.lot_infoRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.productRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespersonRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDS.salespotpurchaseRowChangeEvent">
+<summary>
+Row event argument class
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.customerTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.custprevpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.custtocaridTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.lot_infoTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.productTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.salespersonTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.salespotpurchaseTableAdapter">
+<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager">
+<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+<member name="M:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.UpdateUpdatedRows(SalesPersonMain.SalesDBDS,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Update rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.UpdateInsertedRows(SalesPersonMain.SalesDBDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Insert rows in top-down order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.UpdateDeletedRows(SalesPersonMain.SalesDBDS,System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Delete rows in bottom-up order.
+</summary>
+</member>
+<member name="M:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member>
+<member name="M:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.UpdateAll(SalesPersonMain.SalesDBDS)">
+<summary>
+Update all changes to the dataset.
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.UpdateOrderOption">
+<summary>
+Update Order Option
+</summary>
+</member>
+<member name="T:SalesPersonMain.SalesDBDSTableAdapters.TableAdapterManager.SelfReferenceComparer">
+<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member>
+<member name="M:SalesPersonMain.Form1.Display_Data_From_MySQL_Depending_On_Combobox_Value_Load(System.Object,System.EventArgs)">
+ '''''''''''''''''''
+</member>
+</members>
+</doc>
