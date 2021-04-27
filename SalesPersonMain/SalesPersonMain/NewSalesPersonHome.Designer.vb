@@ -81,6 +81,7 @@ Partial Class NewSalesPersonHome
         Me.PurchaseButton = New System.Windows.Forms.Button()
         Me.RefreshPrev = New System.Windows.Forms.Button()
         Me.RefreshSalesPrevPurc = New System.Windows.Forms.Button()
+        Me.XMLoutput = New System.Windows.Forms.Button()
         CType(Me.ColorinfoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NEWSALESDBDATASET, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SalesdbDataSetFIXED, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -536,18 +537,28 @@ Partial Class NewSalesPersonHome
         '
         'RefreshSalesPrevPurc
         '
-        Me.RefreshSalesPrevPurc.Location = New System.Drawing.Point(202, 601)
+        Me.RefreshSalesPrevPurc.Location = New System.Drawing.Point(114, 601)
         Me.RefreshSalesPrevPurc.Name = "RefreshSalesPrevPurc"
         Me.RefreshSalesPrevPurc.Size = New System.Drawing.Size(151, 47)
         Me.RefreshSalesPrevPurc.TabIndex = 284
         Me.RefreshSalesPrevPurc.Text = "Refresh "
         Me.RefreshSalesPrevPurc.UseVisualStyleBackColor = True
         '
+        'XMLoutput
+        '
+        Me.XMLoutput.Location = New System.Drawing.Point(358, 600)
+        Me.XMLoutput.Name = "XMLoutput"
+        Me.XMLoutput.Size = New System.Drawing.Size(151, 47)
+        Me.XMLoutput.TabIndex = 285
+        Me.XMLoutput.Text = "Output to XML"
+        Me.XMLoutput.UseVisualStyleBackColor = True
+        '
         'NewSalesPersonHome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1373, 704)
+        Me.Controls.Add(Me.XMLoutput)
         Me.Controls.Add(Me.RefreshSalesPrevPurc)
         Me.Controls.Add(Me.RefreshPrev)
         Me.Controls.Add(Me.PurchaseButton)
@@ -665,4 +676,5 @@ Partial Class NewSalesPersonHome
     Friend WithEvents PurchaseButton As Button
     Friend WithEvents RefreshPrev As Button
     Friend WithEvents RefreshSalesPrevPurc As Button
+    Friend WithEvents XMLoutput As Button
 End Class

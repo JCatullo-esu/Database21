@@ -5,6 +5,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class NewMakeModelColor
     Dim connection As New MySqlConnection("server=localhost;user id=root;password=1234;persistsecurityinfo=True;database=SalesDB")
+    Dim ds As New DataSet
 
     Function ExecCommand(ByVal cmd As MySqlCommand) As Boolean
 
@@ -72,6 +73,49 @@ Public Class NewMakeModelColor
             End If
 
             ColorText.Text = ""
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+
+        Dim fd As OpenFileDialog = New OpenFileDialog()
+            Dim strFileName As String
+
+            fd.Title = "Open File Dialog"
+            fd.InitialDirectory = "C:\"
+            fd.Filter = "All files (*.*)|*.*|All files (*.*)|*.*"
+            fd.FilterIndex = 2
+        fd.RestoreDirectory = True
+
+        Dim make, model As String
+
+        If fd.ShowDialog() = DialogResult.OK Then
+            strFileName = fd.FileName
+            Dim NewXDoc As XDocument = XDocument.Load(strFileName)
+
+            ds.ReadXml(strFileName)
+            Dim i As Integer
+            For i = 0 To ds.Tables(0).Rows.Count - 1
+                make = ds.Tables(0).Rows(i).Item(0)
+                model = ds.Tables(0).Rows(i).Item(1)
+                Dim Sql As String = "INSERT INTO `makemodelinfo` (`Make`,`Model`) VALUES('" & make & "','" & model & "')"
+                Dim adapter As MySqlDataAdapter
+                adapter = New MySqlDataAdapter(Sql, connection)
+                Dim table As New DataTable()
+                adapter.Fill(table)
+                MessageBox.Show("Data inserted")
+            Next
+
+
+        End If
+
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
         End If
     End Sub
 End Class

@@ -32,6 +32,7 @@ Partial Class NewMakeModelColor
         Me.Label3 = New System.Windows.Forms.Label()
         Me.AddNewMakeModel = New System.Windows.Forms.Button()
         Me.ColorButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ModelText
@@ -79,7 +80,7 @@ Partial Class NewMakeModelColor
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(135, 161)
+        Me.Label4.Location = New System.Drawing.Point(132, 194)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(31, 13)
         Me.Label4.TabIndex = 261
@@ -87,7 +88,7 @@ Partial Class NewMakeModelColor
         '
         'ColorText
         '
-        Me.ColorText.Location = New System.Drawing.Point(107, 187)
+        Me.ColorText.Location = New System.Drawing.Point(104, 220)
         Me.ColorText.Name = "ColorText"
         Me.ColorText.Size = New System.Drawing.Size(96, 20)
         Me.ColorText.TabIndex = 260
@@ -96,7 +97,7 @@ Partial Class NewMakeModelColor
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(69, 126)
+        Me.Label3.Location = New System.Drawing.Point(66, 159)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(173, 25)
         Me.Label3.TabIndex = 262
@@ -104,7 +105,7 @@ Partial Class NewMakeModelColor
         '
         'AddNewMakeModel
         '
-        Me.AddNewMakeModel.Location = New System.Drawing.Point(293, 72)
+        Me.AddNewMakeModel.Location = New System.Drawing.Point(293, 96)
         Me.AddNewMakeModel.Name = "AddNewMakeModel"
         Me.AddNewMakeModel.Size = New System.Drawing.Size(166, 48)
         Me.AddNewMakeModel.TabIndex = 270
@@ -113,18 +114,28 @@ Partial Class NewMakeModelColor
         '
         'ColorButton
         '
-        Me.ColorButton.Location = New System.Drawing.Point(293, 161)
+        Me.ColorButton.Location = New System.Drawing.Point(293, 192)
         Me.ColorButton.Name = "ColorButton"
         Me.ColorButton.Size = New System.Drawing.Size(166, 48)
         Me.ColorButton.TabIndex = 271
         Me.ColorButton.Text = "Add A New Color"
         Me.ColorButton.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(293, 42)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(166, 48)
+        Me.Button1.TabIndex = 272
+        Me.Button1.Text = "Import from XML"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'NewMakeModelColor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(493, 243)
+        Me.ClientSize = New System.Drawing.Size(493, 252)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ColorButton)
         Me.Controls.Add(Me.AddNewMakeModel)
         Me.Controls.Add(Me.Label3)
@@ -152,4 +163,5 @@ Partial Class NewMakeModelColor
     Friend WithEvents Label3 As Label
     Friend WithEvents AddNewMakeModel As Button
     Friend WithEvents ColorButton As Button
+    Friend WithEvents Button1 As Button
 End Class

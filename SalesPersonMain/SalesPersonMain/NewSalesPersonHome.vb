@@ -13,6 +13,7 @@ Public Class NewSalesPersonHome
     Dim reader As MySqlDataReader
     Dim reader2 As MySqlDataReader
     Dim reader3 As MySqlDataReader
+    Dim ds As New DataSet
     Public Property sstringpass
 
     Dim CarIDint, CustID, Priceint As Integer
@@ -482,7 +483,7 @@ Public Class NewSalesPersonHome
         reader3 = command3.ExecuteReader
 
         While reader3.Read
-            Dim Lid = reader3.GetInt32("Lot Name")
+            Dim Lid = reader3.GetString("Lot Name")
             LotDropDown.Items.Add(Lid)
         End While
 
@@ -534,6 +535,31 @@ Public Class NewSalesPersonHome
         adapter.Fill(table)
 
         PrevGrid.DataSource = table
+
+
+        If connection.State = ConnectionState.Open Then
+            connection.Close()
+        End If
+    End Sub
+
+    Private Sub XMLoutput_Click(sender As Object, e As EventArgs) Handles XMLoutput.Click
+        If connection.State = ConnectionState.Closed Then
+            connection.Open()
+        End If
+
+
+        Try
+            Dim adapter As New MySqlDataAdapter("SELECT `VinNum`,`SoldPrice`,`Make`,`Model`,`SalesFirstName`,`SalesLastName` FROM `custsold`
+            LEFT JOIN `product` ON `product`.`CarID` = `custsold`.`CarID`
+            LEFT JOIN `salesperson` ON `salesperson`.`SalesID` = `custsold`.`SalesPersonID`
+            LEFT JOIN `makemodelinfo` ON `makemodelinfo`.`MMinfoID` = `product`.`MMID`", connection)
+
+            adapter.Fill(ds)
+            ds.WriteXml("C:\Users\zespy\Documents\Database Project\xmlfiles\salesdata.xml")
+            MessageBox.Show("Done")
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
 
 
         If connection.State = ConnectionState.Open Then
